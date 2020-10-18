@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ebazaar</string>
+    <string name="select_photo">Select photo</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_name">Product Name</string>
+    <string name="submit">Submit</string>
+    <string name="signout">Signout</string>
+    <string name="home">home</string>
+    <string name="open_draw" />
+    <string name="close_draw" />
+</resources>

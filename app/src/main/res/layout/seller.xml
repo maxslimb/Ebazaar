@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="@color/colorPrimaryDark">
+
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_bt"
+        android:text="@string/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbp" />
+
+    <EditText
+        android:id="@+id/pname"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="85dp"
+        android:autofillHints=""
+        android:background="@drawable/rounded_bt"
+        android:hint="@string/product_name"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photoselect"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/pprice"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        android:autofillHints=""
+        android:background="@drawable/rounded_bt"
+        android:hint="@string/product_price"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pname" />
+
+    <Button
+        android:id="@+id/sbp"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/rounded_bt"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pprice"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_bt"
+        android:text="@string/signout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home" />
+
+
+    <Button
+        android:id="@+id/photoselect"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/rounded_ph"
+        android:text="@string/select_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="38dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
