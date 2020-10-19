@@ -28,14 +28,10 @@ class MainActivity : AppCompatActivity(){
         database = FirebaseDatabase.getInstance().getReference("product")
 
         val products = arrayListOf<Product>()
-        val addp: Button = findViewById(R.id.addp)
-        addp.setOnClickListener {
-            val myi = Intent(this@MainActivity, seller::class.java)
-            this@MainActivity.startActivity(myi)  }
         // Read from the database
-        for (i in 0..2){
+        /*for (i in 0..2){
             products.add(Product("Organic Apple","https://via.placeholder.com/300/ffff00",45.0))}
-        database.addValueEventListener(object : ValueEventListener {
+        */database.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -60,7 +56,7 @@ class MainActivity : AppCompatActivity(){
 
         if(uid==null)
         {
-            val intent = Intent(this@MainActivity, Signin::class.java)
+            val intent = Intent(this@MainActivity, signup::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             this@MainActivity.startActivity(intent)
         }

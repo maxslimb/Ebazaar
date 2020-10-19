@@ -24,17 +24,9 @@
         android:id="@+id/recycleview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/addp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    <Button
-        android:id="@+id/addp"
-        android:layout_width="147dp"
-        android:layout_height="52dp"
-        android:text="ADD Products"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="380dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
