@@ -39,16 +39,16 @@ class Signin : AppCompatActivity(){
 
             if (resultCode == Activity.RESULT_OK) {
                 if(intent.getStringExtra("user") == "customer"){
-                Toast.makeText(this@Signin,"Sign In Successfully",Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@Signin,MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
+                    Toast.makeText(this@Signin,"Sign In Successfully",Toast.LENGTH_SHORT).show()
                 }
                 if(intent.getStringExtra("user") == "seller"){
-                    Toast.makeText(this@Signin,"Sign In Successfully",Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@Signin,seller::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
+                    Toast.makeText(this@Signin,"Sign In Successfully",Toast.LENGTH_SHORT).show()
                 }
 
             }else {

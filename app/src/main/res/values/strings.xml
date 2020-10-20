@@ -5,7 +5,9 @@
     <string name="product_name">Product Name</string>
     <string name="submit">Submit</string>
     <string name="signout">Signout</string>
-    <string name="home">home</string>
-    <string name="open_draw" />
-    <string name="close_draw" />
+    <string name="home">Home</string>
+    <string name="open_draw">Open</string>
+    <string name="close_draw">Close</string>
+    <string name="see_if_it_is_available">see if it is available</string>
+    <string name="product_details">55</string>
 </resources>

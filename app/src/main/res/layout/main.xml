@@ -18,4 +18,6 @@
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_view"
         />
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
