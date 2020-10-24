@@ -18,20 +18,21 @@ class Cart : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
         val products = arrayListOf<Product>()
-        for (i in 0..2){
-            products.add(Product("Organic Apple","https://via.placeholder.com/300/ffff00",45.0))}
-        database = FirebaseDatabase.getInstance().getReference("Cart")
+        /*for (i in 0..2){
+           products.add(Product("Organic Apple","https://via.placeholder.com/300/ffff00",45.0))}
+        */database = FirebaseDatabase.getInstance().getReference("Cart/$uid")
         database.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Toast.makeText(this@Cart,"Something Went Wrong!",Toast.LENGTH_SHORT).show()
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                for(i in p0.children){
+
+                for(i in p0.children) {
                     val pro = i.getValue(Product::class.java)
                     products.add(pro!!)
-
                 }
+
                 productsRecyclerView.apply {
                     layoutManager = GridLayoutManager(this@Cart,1,RecyclerView.VERTICAL,false)
                     adapter = CartAdapter(products)
