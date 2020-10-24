@@ -35,7 +35,7 @@ class signup : AppCompatActivity(){
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 this@signup.startActivity(intent)
             }
-            if(uid == "uhXnMzyXbBTQallUtFnAwar78Ch2"){
+            if(uid == "uhXnMzyXbBTQallUtFnAwar78Ch2"|| uid == "CAhANbG1FLXzJCgtMCRj3hVE6pF2"){
             val intent = Intent(this@signup, com.example.ebazaar.seller::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             this@signup.startActivity(intent)

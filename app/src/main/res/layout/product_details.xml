@@ -7,7 +7,7 @@
     android:padding="16dp">
     <ImageView
         android:id="@+id/product_photo"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
         android:transitionName="photoToAnimate"

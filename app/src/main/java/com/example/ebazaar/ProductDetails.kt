@@ -14,7 +14,7 @@ class ProductDetails: AppCompatActivity() {
         val title = intent.getStringExtra("title") ?: ""
         val price = intent.getDoubleExtra("price",0.0)
         val photo = intent.getStringExtra("photo") ?: ""
-        Picasso.get().load(photo).resize(300,300).into(product_photo)
+        Picasso.get().load(photo).resize(400,300).into(product_photo)
         product_name.text = title
         product_price.text = price.toString()
         availability.setOnClickListener {
@@ -28,6 +28,7 @@ class ProductDetails: AppCompatActivity() {
             val intent = Intent(this,Cart::class.java)
             intent.putExtra("product_name",title)
             intent.putExtra("product_price",price)
+            intent.putExtra("product_photo",photo)
             startActivity(intent)
         }
     }

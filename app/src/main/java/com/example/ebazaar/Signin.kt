@@ -27,7 +27,8 @@ class Signin : AppCompatActivity(){
             AuthUI.getInstance()
             .createSignInIntentBuilder()
             .setAvailableProviders(providers)
-                .setTheme(R.style.AppTheme)
+                .setTheme(R.style.LoginTheme)
+                .setLogo(R.mipmap.ic_launcher)
             .build(),
             RC_SIGN_IN)
     }

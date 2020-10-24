@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.maind.*
 
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity(){
     private val uid = FirebaseAuth.getInstance().uid
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        progressBar?.visibility = View.VISIBLE
         VERIFYUSERLOGGEDIN()
         setContentView(R.layout.main)
         toggle= ActionBarDrawerToggle(this,drawer_layout,toolbar,R.string.open_draw,R.string.close_draw)
