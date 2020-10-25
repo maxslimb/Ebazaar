@@ -54,7 +54,7 @@ class Cart : AppCompatActivity() {
 
     private fun writepdata(title:String,photoUrl: String,price:Double){
 
-        val key = database.child("Cart").push().key
+        val key = database.child("Cart/$uid").push().key
         if (key == null) {
             Log.w(TAG, "Couldn't get push key for posts")
             return
@@ -64,7 +64,7 @@ class Cart : AppCompatActivity() {
         val productValues = prodat.toMap()
 
         val childUpdates = hashMapOf<String, Any>(
-            "/$uid/$key " to productValues
+            "$key " to productValues
         )
 
         database.updateChildren(childUpdates)
