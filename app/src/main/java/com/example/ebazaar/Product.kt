@@ -17,4 +17,16 @@ data class Product(
             "price" to price
         )
     }
+    fun geturl(): String? {
+        return photoUrl
+    }
+
+    fun getname(): String? {
+        return title
+    }
+
+    fun getPprice(): Double? {
+        return price
+    }
+
 }

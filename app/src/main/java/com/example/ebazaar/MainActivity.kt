@@ -49,7 +49,8 @@ class MainActivity : AppCompatActivity(){
                         }
                 }
 
-                R.id.action_home -> Toast.makeText(applicationContext,"clicked on home",Toast.LENGTH_SHORT).show()
+                R.id.action_home -> closeContextMenu()
+                R.id.cart -> startActivity(Intent(this@MainActivity, Cart::class.java))
             }
             it.isChecked = true
             true
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity(){
         // Read from the database
         /*for (i in 0..2){
             products.add(Product("Organic Apple","https://via.placeholder.com/300/ffff00",45.0))}
-        */database.addValueEventListener(object : ValueEventListener {
+        */database.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 TODO("Not yet implemented")
             }

@@ -30,6 +30,7 @@
     <EditText
         android:id="@+id/paymentNumber"
         android:layout_width="0dp"
+        android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Credit card number"
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Address"
+        android:inputType="textPostalAddress"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/paymentNumber" />
@@ -82,8 +84,10 @@
         android:text="Submit Order"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ProgressBar
         android:id="@+id/progressBar2"

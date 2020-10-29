@@ -11,8 +11,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:windowSoftInputMode="adjustResize"
         android:theme="@style/AppTheme">
-        <activity android:name=".Cart"></activity>
+
         <activity android:name=".signup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +25,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Signin" />
         <activity android:name=".ProductDetails" />
+        <activity android:name=".Cart"/>
     </application>
 
 </manifest>
