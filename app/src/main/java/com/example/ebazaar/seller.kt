@@ -11,21 +11,26 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.main.*
+import kotlinx.android.synthetic.main.maind.*
 import kotlinx.android.synthetic.main.seller.*
 import java.util.*
 
 class seller: AppCompatActivity() {
     private lateinit var database: DatabaseReference
+    private lateinit var toggle: ActionBarDrawerToggle
     private val uid = FirebaseAuth.getInstance().uid
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seller)
+        setSupportActionBar(toolbar)
         database = FirebaseDatabase.getInstance().reference
         val submit:Button ?= findViewById(R.id.sbp)
         val hh:Button ?= findViewById(R.id.home)
@@ -36,6 +41,8 @@ class seller: AppCompatActivity() {
         }
         submit?.setOnClickListener {
                     uploadimagetofirebaseStorage()
+            Toast.makeText(applicationContext,"${pname.text} Successfully Added",Toast.LENGTH_SHORT).show()
+
         }
         hh?.setOnClickListener {
             val myi = Intent(this@seller, MainActivity::class.java)
@@ -89,16 +96,20 @@ class seller: AppCompatActivity() {
             "/product/$key" to productValues,
             "/user-products/$uid/$key" to productValues
         )
-
+        pname.setText("")
+        pprice.setText("")
+        pprice.clearFocus()
+        photoselect.setBackgroundResource(R.drawable.rounded_ph)
+        photoselect.setText(R.string.select_photo)
         database.updateChildren(childUpdates)
-        Toast.makeText(this@seller,"Successfully Added Item $title",Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext,"Successfully Added Item $title",Toast.LENGTH_SHORT).show()
     }
     private fun signOut() {
         AuthUI.getInstance()
             .signOut(this)
             .addOnCompleteListener {
                 Toast.makeText(this@seller,"User Signed Out",Toast.LENGTH_SHORT).show()
-                val myi1 = Intent(this@seller, Signin::class.java)
+                val myi1 = Intent(this@seller, signup::class.java)
                 myi1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 this@seller.startActivity(myi1)
             }

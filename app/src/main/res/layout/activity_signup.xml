@@ -4,28 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_mainscreen"
+    android:padding="25dp"
     tools:context=".signup">
 
-    <Button
-        android:id="@+id/customer"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="250dp"
-        android:text="Sign in as customer"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_signin"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/rounded_bt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/customer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="55dp"
+        android:background="@drawable/main_roundbt"
+        android:text="Sign in as customer"
+        android:textColor="#ffff"
+        app:layout_constraintBottom_toTopOf="@+id/seller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
         android:id="@+id/seller"
         android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="104dp"
-        android:background="@drawable/rounded_bt"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:textColor="#ffff"
+        android:background="@drawable/main_roundbt"
         android:text="Sign in as Seller"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customer" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

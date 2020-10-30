@@ -19,6 +19,7 @@ class Signin : AppCompatActivity(){
     }
    private fun buildui()
     {val providers = arrayListOf(
+        AuthUI.IdpConfig.PhoneBuilder().build(),
         AuthUI.IdpConfig.EmailBuilder().build(),
         AuthUI.IdpConfig.GoogleBuilder().build())
 
@@ -28,7 +29,6 @@ class Signin : AppCompatActivity(){
             .createSignInIntentBuilder()
             .setAvailableProviders(providers)
                 .setTheme(R.style.LoginTheme)
-                .setLogo(R.mipmap.ic_launcher)
             .build(),
             RC_SIGN_IN)
     }

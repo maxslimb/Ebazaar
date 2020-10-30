@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(){
                         .signOut(this)
                         .addOnCompleteListener {
                             Toast.makeText(applicationContext,"User Signed Out",Toast.LENGTH_SHORT).show()
-                            val myi1 = Intent(this@MainActivity, Signin::class.java)
+                            val myi1 = Intent(this@MainActivity, signup::class.java)
                             myi1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                             this@MainActivity.startActivity(myi1)
                         }

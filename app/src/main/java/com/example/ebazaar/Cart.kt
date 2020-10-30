@@ -59,7 +59,6 @@ class Cart : AppCompatActivity() {
                     products.add(pro!!)
                 }
 
-
             }
         })*/
         if (intent.hasExtra("product_name")&&intent.hasExtra("product_price")&&intent.hasExtra("product_photo")){
