@@ -11,9 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:windowSoftInputMode="adjustResize"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".yrproducts"></activity>
+        <activity android:name=".yorder" />
         <activity android:name=".signup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +24,18 @@
         </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity android:name=".seller" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Signin" />
         <activity android:name=".ProductDetails" />
-        <activity android:name=".Cart"/>
+        <activity android:name=".Cart" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_l7x9oScajUO2rC"
+            />
     </application>
+
 
 </manifest>

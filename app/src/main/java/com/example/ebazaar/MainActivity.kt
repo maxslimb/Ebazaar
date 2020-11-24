@@ -80,8 +80,6 @@ class MainActivity : AppCompatActivity(){
             }
         })
 
-
-
     }
 
 
@@ -111,4 +109,5 @@ class MainActivity : AppCompatActivity(){
             this@MainActivity.startActivity(intent)
         }
     }
+
 }

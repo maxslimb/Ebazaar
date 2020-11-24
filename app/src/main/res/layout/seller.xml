@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
     android:background="@color/colorPrimaryDark">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_seller"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <Button
         android:id="@+id/home"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="53dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_bt"
         android:text="@string/home"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sbp" />
 
     <EditText
         android:id="@+id/pname"
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="85dp"
         android:autofillHints=""
@@ -37,7 +49,7 @@
 
     <EditText
         android:id="@+id/pprice"
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="55dp"
         android:autofillHints=""
@@ -51,7 +63,7 @@
 
     <Button
         android:id="@+id/sbp"
-        android:layout_width="0dp"
+        android:layout_width="153dp"
         android:layout_height="53dp"
         android:layout_marginTop="55dp"
         android:background="@drawable/rounded_bt"
@@ -65,7 +77,8 @@
 
     <Button
         android:id="@+id/signout"
-        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_width="153dp"
         android:layout_height="53dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_bt"
@@ -79,6 +92,7 @@
         android:id="@+id/photoselect"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/rounded_ph"
         android:text="@string/select_photo"
         app:layout_constraintEnd_toEndOf="parent"

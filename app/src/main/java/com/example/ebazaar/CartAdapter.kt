@@ -14,9 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 
 
-class CartAdapter(options: FirebaseRecyclerOptions<Product>) : FirebaseRecyclerAdapter<Product, CartAdapter.ViewHolder>(
-    options
-) {
+class CartAdapter(options: FirebaseRecyclerOptions<Product>) : FirebaseRecyclerAdapter<Product, CartAdapter.ViewHolder>(options) {
     private val uid = FirebaseAuth.getInstance().uid
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cart_row,parent,false)

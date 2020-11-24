@@ -8,6 +8,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,6 +24,7 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.maind.*
 import kotlinx.android.synthetic.main.seller.*
+import kotlinx.android.synthetic.main.seller_main.*
 import java.util.*
 
 class seller: AppCompatActivity() {
@@ -29,8 +33,30 @@ class seller: AppCompatActivity() {
     private val uid = FirebaseAuth.getInstance().uid
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.seller)
-        setSupportActionBar(toolbar)
+        setContentView(R.layout.seller_main)
+        toggle= ActionBarDrawerToggle(this,drawer_layout1,toolbar_seller,R.string.open_draw,R.string.close_draw)
+        drawer_layout1.addDrawerListener(toggle)
+        toggle.syncState()
+        setSupportActionBar(toolbar_seller)
+        nav_view1.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.signout -> {
+                    AuthUI.getInstance()
+                        .signOut(this)
+                        .addOnCompleteListener {
+                            Toast.makeText(applicationContext,"User Signed Out",Toast.LENGTH_SHORT).show()
+                            val myi1 = Intent(this@seller, signup::class.java)
+                            myi1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            this@seller.startActivity(myi1)
+                        }
+                }
+
+                R.id.action_home1 -> closeContextMenu()
+                R.id.youroder -> startActivity(Intent(applicationContext, yorder::class.java))
+            }
+           // it.isChecked = true
+            true
+        }
         database = FirebaseDatabase.getInstance().reference
         val submit:Button ?= findViewById(R.id.sbp)
         val hh:Button ?= findViewById(R.id.home)
@@ -118,4 +144,5 @@ class seller: AppCompatActivity() {
     companion object {
         private const val TAG = "SELLER"
     }
+
 }

@@ -21,8 +21,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsRecyclerView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -30,13 +32,14 @@
     <EditText
         android:id="@+id/paymentNumber"
         android:layout_width="0dp"
-        android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Credit card number"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/productsRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/productsRecyclerView" />
 
     <EditText
         android:id="@+id/paymentAddress"
@@ -76,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/paymentAddress" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit_order"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
