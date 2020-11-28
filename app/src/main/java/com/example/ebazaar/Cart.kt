@@ -49,27 +49,7 @@ class Cart : AppCompatActivity(), PaymentResultListener{
 
 
         submit_order.setOnClickListener {
-            val query1 = FirebaseDatabase.getInstance().reference.child("Cart/$uid")
-                .orderByChild("title")
 
-            query1.addValueEventListener(object : ValueEventListener {
-                override fun onCancelled(error: DatabaseError) {
-                    Log.w(TAG, "Couldn't get push key for posts")
-                }
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    snapshot.children.forEach {
-                        val order = it.getValue(Product::class.java)
-                        Log.d(TAG,order.toString())
-                        writedata(order)
-                        query1.removeEventListener(this)
-                    }
-
-
-                }
-            })
-            FirebaseDatabase.getInstance().reference.child("Cart/$uid")
-                .removeValue()
             ad.startListening()
             Checkout.preload(applicationContext)
             startpayment()
@@ -156,7 +136,27 @@ class Cart : AppCompatActivity(), PaymentResultListener{
 
     override fun onPaymentSuccess(p0: String?) {
         Toast.makeText(this@Cart, "Payment Successful: $p0 ",Toast.LENGTH_LONG).show()
+        val query1 = FirebaseDatabase.getInstance().reference.child("Cart/$uid")
+            .orderByChild("title")
 
+        query1.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(TAG, "Couldn't get push key for posts")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    val order = it.getValue(Product::class.java)
+                    Log.d(TAG,order.toString())
+                    writedata(order)
+                    query1.removeEventListener(this)
+                }
+
+
+            }
+        })
+        FirebaseDatabase.getInstance().reference.child("Cart/$uid")
+            .removeValue()
     }
 
     override fun onPaymentError(errorCode: Int, errorDescription: String?) {
