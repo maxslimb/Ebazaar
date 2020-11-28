@@ -34,10 +34,11 @@ class seller: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seller_main)
+        setSupportActionBar(toolbar_seller)
         toggle= ActionBarDrawerToggle(this,drawer_layout1,toolbar_seller,R.string.open_draw,R.string.close_draw)
         drawer_layout1.addDrawerListener(toggle)
         toggle.syncState()
-        setSupportActionBar(toolbar_seller)
+
         nav_view1.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.signout -> {
@@ -52,6 +53,7 @@ class seller: AppCompatActivity() {
                 }
 
                 R.id.action_home1 -> closeContextMenu()
+                R.id.yourp -> startActivity(Intent(applicationContext, yrproducts::class.java))
                 R.id.youroder -> startActivity(Intent(applicationContext, yorder::class.java))
             }
            // it.isChecked = true
