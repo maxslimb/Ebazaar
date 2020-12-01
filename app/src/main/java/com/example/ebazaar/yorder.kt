@@ -10,6 +10,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_yorder.*
+import kotlinx.android.synthetic.main.cart_row.*
 
 class yorder : AppCompatActivity() {
     private val uid = FirebaseAuth.getInstance().uid

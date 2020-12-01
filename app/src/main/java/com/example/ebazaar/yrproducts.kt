@@ -23,7 +23,7 @@ class yrproducts : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yrproducts)
-
+        progressBaR?.visibility = View.GONE
         val query : Query = FirebaseDatabase.getInstance().getReference("user-products/$uid")
         val options: FirebaseRecyclerOptions<Product> = FirebaseRecyclerOptions.Builder<Product>()
             .setQuery(query,Product::class.java)
@@ -33,7 +33,7 @@ class yrproducts : AppCompatActivity() {
         productsR.apply {
             layoutManager = GridLayoutManager(this@yrproducts,1, RecyclerView.VERTICAL,false)
             adapter = ad
-            //progressBaR?.visibility = View.GONE
+
         }
     }
 
